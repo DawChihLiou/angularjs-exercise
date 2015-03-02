@@ -1,5 +1,5 @@
 # Angularjs Exercise
-A 40 hour practice of Angularjs
+*A 40 hour practice of Angularjs*
 
 #### What is this exercise about
 This exercise is designed for people who are new to AngularJS and looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you will have a more comprehensive idea of how to build single page applications through AngularJS.
