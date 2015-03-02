@@ -1,0 +1,15 @@
+<section class="products row">
+	<article class="col-lg-4 col-md-6 col-sm-12" ng-repeat="product in products | filter:searchValue">
+		<section class="item-wrap">
+			<section>
+				<h3><a ng-href="#/product-detail/{{product.id}}">{{ product.name }}</a></h3>
+				<h4>${{ product.price }}</h4>
+			</section>
+			
+			<button class="btn btn-default" ng-click="addToCart(product)">
+				Quick Shop
+				<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+			</button>
+		</section>
+	</article>
+</section>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Shopping Center</title>
+	<link rel="stylesheet" href="stylesheets/app.css">
+</head>
+<body ng-controller="indexController">
+	<header class"row">
+		<section class="logo col-lg-3">
+			<a href="#/product">
+				<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
+				<section><h2>Shopping<strong>Center</strong></h2></section>
+			</a>
+		</section>
+
+		<section class="search col-lg-6">
+			<input  placeholder="search products..." class="search-input form-control" ng-model="searchValue"/>
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+			</button>
+		</section>
+		
+		<section class="cart col-lg-3">
+			<button class="btn btn-default" ng-click="viewCart()">
+				View Cart
+				<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+			</button>
+		</section>
+	</header>
+
+	<div class="container" ng-view></div>
+
+	<footer>
+		<p>&copy; Daw-Chih Liou</p>
+	</footer>
+
+  	<!-- script -->
+  	<script data-main="javascripts/main" src="javascripts/lib/require.js"></script>
+</body>
+</html>

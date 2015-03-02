@@ -1,0 +1,120 @@
+@import url("bootstrap.css");
+html, body {
+  width: 100%;
+  height: 100%; }
+
+a:hover {
+  text-decoration: none !important; }
+
+.photo, .container .products article .item-wrap, .container .product-detail .product-detail-photo, .container .orders article .item-wrap {
+  background-color: #eee; }
+
+header {
+  width: 100%;
+  height: 10%;
+  background-color: #bbb; }
+  header section {
+    top: 13px; }
+  header .logo a {
+    color: #333; }
+  header .logo span {
+    font-size: 50px; }
+  header .logo section {
+    display: inline-block;
+    position: relative;
+    top: -11px; }
+    header .logo section h2 {
+      margin-top: 0;
+      margin-bottom: 0; }
+  header .search {
+    text-align: center; }
+    header .search .search-input {
+      display: inline-block;
+      width: 80%;
+      height: 50px;
+      box-sizing: border-box;
+      margin-right: 1%;
+      vertical-align: middle; }
+    header .search button {
+      width: 50px;
+      height: 50px; }
+  header .cart {
+    text-align: right; }
+    header .cart button {
+      height: 50px; }
+
+.container {
+  min-height: 90%;
+  margin-bottom: -150px;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  .container:after {
+    content: "";
+    display: block;
+    height: 150px; }
+  .container .products article {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .container .products article .item-wrap {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .container .products article .item-wrap h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 10px; }
+      .container .products article .item-wrap button {
+        margin-top: 10px; }
+  .container .product-detail .product-detail-photo {
+    width: 100%;
+    height: 320px; }
+  .container .product-detail .prodcut-info {
+    max-height: 350px;
+    overflow-y: auto; }
+  .container .product-detail .action {
+    padding-top: 20px;
+    text-align: right; }
+    .container .product-detail .action .form-control {
+      display: inline-block;
+      width: 30%; }
+    .container .product-detail .action button {
+      margin-top: 20px; }
+  .container .orders .subtotal {
+    text-align: center;
+    padding-bottom: 20px; }
+  .container .orders article {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    .container .orders article .item-wrap {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+      .container .orders article .item-wrap h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 10px; }
+      .container .orders article .item-wrap .remove {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        color: #bbb; }
+        .container .orders article .item-wrap .remove:hover {
+          color: #888; }
+
+footer {
+  height: 150px;
+  background-color: #bbb;
+  text-align: center; }
+  footer p {
+    line-height: 10; }
+
+/*# sourceMappingURL=app.css.map */
