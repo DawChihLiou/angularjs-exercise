@@ -21,7 +21,7 @@ define(['./module'], function (controllers) {
 			$scope.qty = 1;
 			
 			// retrieve target product from product factory
-			$scope.product = productFactory.products[productId - 1];
+			$scope.product = productFactory.getAllProducts[productId - 1];
 			
 			// add placed order to cart
 			$scope.addToCart = function (product) {

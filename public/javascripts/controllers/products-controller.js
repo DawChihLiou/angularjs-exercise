@@ -7,15 +7,24 @@ define(['./module'], function (controllers) {
 	controllers.controller('productsController', [
 		'$scope', 
 		'$rootScope',
+		'$location',
+		'$routeParams',
 		'productFactory', 
 		'productServices', 
-		function ($scope, $rootScope, productFactory, productServices) {
+		function ($scope, $rootScope, $location, $routeParams, productFactory, productServices) {
 
 			console.log('products controller initialized.');
 
 			var quickShopQty = 1
 
-			$scope.products = productFactory.products;
+			if ($location.path() === '/products') {
+				$scope.showSearchReault = false;
+				$scope.products = productFactory.getAllProducts;
+			} else {
+				$scope.showSearchReault = true;
+				$scope.query = $routeParams.query;
+				$scope.products = productFactory.getProductsByKeyword($routeParams.query);
+			}
 			
 			// add placed order to cart
 			$scope.addToCart = function (product) {
@@ -34,19 +43,6 @@ define(['./module'], function (controllers) {
 							console.log('add order to cart failed -> ' + err);
 					});
 				}
-			};
-
-			// search for particular products with keywords
-			$scope.searchProduct = function (keyword) {
-				productServices.search(keyword, $scope.products)
-					.then(function (data) {
-						// update product list	
-						$scope.products = data;
-
-					}, function (err) {
-						console.log('Search result failed. ' + err);
-				});
-
 			};
 	}]);
 });

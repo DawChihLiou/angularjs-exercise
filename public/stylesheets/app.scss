@@ -122,6 +122,11 @@ header {
 					margin-top:10px;
 				}
 			}
+
+			&.search-hint {
+				border-bottom: 1px solid $block-color;
+				margin: 10px;
+			}
 		}
 	}
 

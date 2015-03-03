@@ -104,7 +104,28 @@ define(['./module'], function (services) {
 				},
 			];
 
-		factory.products = products;
+		factory.getAllProducts = products;
+
+		factory.getProductsByKeyword = function (keyword) {
+			
+			var result = [],
+		 		objStr,
+		 		regexStr = '([' + keyword.replace(/\s/g, '') + '])',
+		 		regex = new RegExp(regexStr, 'g');
+
+		 	var i = 0,
+		 		len = products.length;
+
+		 	for (i; i < len; i += 1) {
+		 		objStr = JSON.stringify(products[i]);
+		 		
+		 		if (regex.test(objStr)) {
+		 			result.push(products[i]);
+		 		}
+		 	}
+
+			return result;
+		};
 
 		return factory;
 	}]);

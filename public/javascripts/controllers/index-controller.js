@@ -9,8 +9,8 @@ define(['./module'], function (controllers) {
 		'$scope', 
 		'$rootScope',
 		'$location',
-		'productServices', 
-		function ($scope, $rootScope, $location, productServices) {
+		'productFactory',
+		function ($scope, $rootScope, $location, productFactory) {
 
 			console.log('index controller initialized.');
 
@@ -37,6 +37,17 @@ define(['./module'], function (controllers) {
 				// route to 'cart' view
 				$location.path('/cart');
 			}
+
+			/* 
+			 * search for particular products with keywords
+			 */
+			$scope.searchProducts = function (keyword) {
+				var result = productFactory.getProductsByKeyword(keyword);
+
+				// route to 'cart' view
+				$location.path('/search/' + keyword);
+				$scope.searchValue = '';
+			};
 
 		}]);
 });

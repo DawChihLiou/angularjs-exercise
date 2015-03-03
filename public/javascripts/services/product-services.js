@@ -59,27 +59,6 @@ define(['./module'], function (services) {
 			return deffered.promise;
 		};
 
-		/*
-		 * Search products with keyword
-		 */
-		 services.search = function (keyword, products) {
-
-		 	var regexStr = '[' + keyword.replace(/\s/g, '') + ']',
-		 		regex = new RegExp(regexStr, 'g');
-
-		 	var i = 0,
-		 		len = products.length;
-
-		 	for (i; i < len; i += 1) {
-		 		var objStr = JSON.stringify(products[i]);
-		 		if (objStr.test(regex)) {
-		 			return true;
-		 		}
-		 	}
-
-		 	return false;
-		 }
-
 		return services;
 	}]);
 });

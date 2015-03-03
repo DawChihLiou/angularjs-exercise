@@ -1,4 +1,8 @@
 <section class="products row">
+	<article class="search-hint" ng-show="showSearchReault">
+		<h4> Search result for <strong>{{ query }}</strong></h4>
+	</article>
+
 	<article class="col-lg-4 col-md-6 col-sm-12" ng-repeat="product in products | filter:searchValue">
 		<section class="item-wrap">
 			<section>

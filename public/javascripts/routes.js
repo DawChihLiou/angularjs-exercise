@@ -17,6 +17,11 @@ define(['./app'], function (app) {
             controller: 'shoppingCartController'
         });
 
+        $routeProvider.when('/search/:query', {
+            templateUrl: 'partials/products.html',
+            controller: 'productsController'
+        });
+
         $routeProvider.otherwise({
         	redirectTo: '/products'
         });
