@@ -1,13 +1,16 @@
 # Angularjs Exercise
-*A 40 hour practice of Angularjs*
+*A 40 hour practice of AngularJS*
 
-#### What is this exercise about
+## What is this exercise about
 This exercise is designed for people who are new to AngularJS and looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you will have a more comprehensive idea of how to build single page applications through AngularJS.
 
-#### What exactly you will be working on
+## What exactly you will be working on
 You will be building a online shopping platform which allows consumers to browse, search, and purchase products. To make it less overwhelming for beginners, the entire exercise is pure AngularJS.
 
-#### How to approach it
+## How to approach it
 By the time you decide to work on the project, you should have basic knowledge of the basic building blocks of AngularJS such as Controllers and Services and Scope. 
 
-It will be easier to follow the workflow if you focus on one view at a time. Each view might involve multiple smaller blocks building blocks such as directives and services. Don't panic! Just follow the scipts. 
+It will be easier to follow the workflow if you focus on one view at a time. Each view might involve multiple smaller building blocks such as directives and services in different directories. Don't panic! Just follow the scipts and explore the logic. One of the beauties of MVW structure is that it breakdown your code into number of layers and keep each part of your code short and clear. So instead of having a huge chunck of javascript file, a healthy project tend to have small Javascript files grouped by their natures.
+
+
+
