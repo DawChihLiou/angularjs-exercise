@@ -4,7 +4,7 @@
 ## What Is it about
 This exercise is designed for people who are new to AngularJS and looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you will have a more comprehensive idea of how to build single page applications through AngularJS.
 
-## What Exactly You Will Be Working on
+## What Exactly You will Be Working on
 You will be building a online shopping platform which allows consumers to browse, search, and purchase products. To make it less overwhelming for beginners, the entire exercise is pure AngularJS.
 
 ## How to Approach It
