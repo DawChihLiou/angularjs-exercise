@@ -12,13 +12,13 @@ By the time you decide to work on the project, you should have basic knowledge o
 
 It will be easier to follow the workflow if you focus on **one view at a time**. Each view might involve multiple smaller building blocks such as directives and services in different directories. Don't panic! Just follow the scipts and explore the logic. One of the beauties of MVW structure is that it breakdown your code into number of layers and keep each part of your code short and clear. So instead of having a huge chunck of javascript file, a healthy project tend to have small Javascript files grouped by their natures.
 
-The soul purpose for this exercise is to get you into AngularJS world so focus on the framework itself (you can totally ignore other parts of the project like Bootstrap, RequireJS, and Testing code if you want.) I include those parts because they are great tools that facilitate my development process.
+The soul purpose for this exercise is to get you into AngularJS world so focus on the framework itself (you can totally ignore other parts of the project like Bootstrap, RequireJS, and Testing code if you want.) I include those parts only because they are great tools that facilitate my development process.
 
 ## So Let's Get to It
 Let's start from the top!
 
 ##### Project Structure
-All of our scripts and templates are located under 'javascripts' and 'partials' folder. Under 'javascripts' folder, you can find all of the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
+All of our scripts and templates are located under 'javascripts' and 'partials' folder. Under 'javascripts' folder, you can find all the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
 
 'index.html' under 'public' folder includes all the scripts and stylesheets you need. It contains common html components through out the app and also locates where views should be when URL changes. 
 
