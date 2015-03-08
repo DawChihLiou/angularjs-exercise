@@ -22,6 +22,6 @@ Sigle Page Application power by AngularJS relies heavily on Javascript codes and
 
 All of our scripts and templates are located under ```javascripts``` and ```partials``` folder. Under ```javascripts``` folder, you can find all the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
 
-```index.html``` under ```public``` folder  is where it the starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. It contains common html components through out the app and also locates where views should be when URL changes. 
+```index.html``` under ```public``` folder  is where it the starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. Besides including assets, you can have your common html components through out the app and also locates where views should be when URL changes. 
 
 
