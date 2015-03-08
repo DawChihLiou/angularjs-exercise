@@ -18,8 +18,10 @@ The soul purpose for this exercise is to get you into AngularJS world so focus o
 Let's start from the top!
 
 ##### Project Structure
-All of our scripts and templates are located under 'javascripts' and 'partials' folder. Under 'javascripts' folder, you can find all the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
+Sigle Page Application power by AngularJS relies heavily on Javascript codes and HTML templates. Pretty much all the magic comes from them so first thing you need is to locate where they are.
 
-'index.html' under 'public' folder includes all the scripts and stylesheets you need. It contains common html components through out the app and also locates where views should be when URL changes. 
+All of our scripts and templates are located under ```javascripts``` and ```partials``` folder. Under ```javascripts``` folder, you can find all the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
+
+```index.html``` under ```public``` folder  is where it the starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. It contains common html components through out the app and also locates where views should be when URL changes. 
 
 
