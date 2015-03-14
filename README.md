@@ -29,6 +29,6 @@ All of our scripts and templates are located under ```javascripts``` and ```part
 For each ```view```, you will need ```controllers``` to perform your functionalities. You can define view/controller pair in configuration with ```$routeProvider```, which loads the specified views and controllers for different URLs.
 
 ##### Service
-You can write your logics in services. Services are great because they can be reused through out your application, and they give your code clear layers so that you can have small and concise ```controller```s that is easy to read.
+You can write your logics in services. Services are great because they can be reused through out your application, and they give your code clear layers so that you can have small and concise ```controllers``` that is easy to read.
 
 
