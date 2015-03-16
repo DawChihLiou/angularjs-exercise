@@ -25,10 +25,27 @@ All of our scripts and templates are located under ```javascripts``` and ```part
 ##### Index page
 ```index.html``` under ```public``` folder  is where it starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. Besides including assets, you can have your common html components through out the app and also locates where views should be when URL changes. 
 
+##### Routing
+Route configuration can be defined in ```app.config()``` function, which allows us to put one-time configuration settings in. In order to set up routing, you need ```$routeProvider``` to do the work. It takes two parameters that the first specifies URL and the second takes an object with template/controller pair.
+
 ##### View & Controller
-For each ```view```, you will need ```controllers``` to perform your functionalities. You can define view/controller pair in configuration with ```$routeProvider```, which loads the specified views and controllers for different URLs.
+For each ```view```, you will need ```controllers``` to perform your functionalities. You can define view/controller pair in configuration with ```$routeProvider```, which loads the specified views and controllers for different URLs. You can find views under ```public/partials``` and controllers under ```public/javascripts/controllers```.
 
 ##### Service
-You can write your logics in services. Services are great because they can be reused through out your application, and they give your code clear layers so that you can have small and concise ```controllers``` that is easy to read.
+You can write your logics in services. Services are great because they can be reused through out your application, and they give your code clear layers so that you can have small and concise ```controllers``` that is easy to read. Services are located under ```public/javascripts/services```. 
+
+##### Directive 
+Directives give you great flexibilities to create your elements with specific functionalities that you want them to perform. 
 
 
+Now that you know what are the key components to an AngularJS app and where they are, we can start working on more details. With this shopping platform application, we need it to perform some basic functionalities: 
+
+    - Display products
+    - Display detail of selected product
+    - Add/remove products to/from shopping cart
+    - Display products in cart and the subtotal of purchase
+    - Search products
+
+In order to present them, we'll create one view for displaying mulitiple products, one for displaying product detail, and another one for displaying selected products in shopping cart. In all the templates, I use ```{{ expression }}``` for two-way data binding. ```ngRepeat``` is a very powerful directive for looping through an array and accessing the elements. So it's very useful for displaying lists or tables.
+
+You'll need controllers to pair with the views to make them functional. The purpose of ```controller``` is to set up and update its $scope object. 
