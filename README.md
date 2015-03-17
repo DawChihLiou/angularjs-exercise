@@ -46,8 +46,8 @@ Now that you know what are the key components to an AngularJS app and how they'r
 
     - Display products
     - Display detail of selected product
-    - Add/remove products to/from shopping cart
     - Display products in cart and the subtotal of purchase
+    - Add/remove products to/from shopping cart
     - Search products
 
 In order to present them, we'll create one view for displaying multiple products, one for displaying product detail, and another one for displaying selected products in shopping cart. 
@@ -60,4 +60,22 @@ Displaying items in shopping cart is a little more complicated. First you need t
 
 Since there's no database involved and we don't need to keep a record of users' behaviors, we can make it work by simply playing with ```$scope``` and ```controller``` hierarchy. A very important concept in AngularJS is that one instance of ```$scope``` is assigned to each controller so the scopes are isolated from other scopes in the application. However, all ```$scope``` are children of ```$rootScope```. It's handy to store "application level" data in root scope so the data can be accessed from any part of the application. 
 
-Another cool concept is that controllers can be nested. Parent controllers and chrild controllers can communicate though ```$emit``` and ```$broadcast``` service that listens to events from child to parent controllers and from parent to child controllers. Data saved in parent controller can be accessed from child controllers. 
+Another cool concept is that controllers can be nested. Parent controllers and chrild controllers can communicate though ```$emit``` and ```$broadcast``` service that listens to events from child to parent controllers and from parent to child controllers. Data saved in parent controller can be accessed from child controllers. So it offers you another way of updating items in shopping cart.
+
+It would very useful to have the subtotal of your items when reviewing shopping cart. You can write a custom directive to calculate the total prices. 
+
+Since we are able to retrieve all product information, it make sense to add another service to only retrieve targeted product. So if you decide to use dummy data like me, you'll have to write a search logic to loop through an array of products and find the matches. 
+
+So to sum up, here are what you need in general:
+	
+	- index page & index controller
+		- ```search``` service
+	- product view & product controller
+		- ```getAllProducts``` service
+		- ```addToCart``` service
+	- product detail view & product detail controller
+		- ```getProductById``` service
+		- ```addToCart``` service
+	- Shopping cart view & shopping cart controller
+		- ```removeOrder``` service
+		- ```subtotal``` directive
