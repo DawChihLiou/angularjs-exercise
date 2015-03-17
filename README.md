@@ -44,11 +44,11 @@ Directives give you great flexibilities to create your elements with specific fu
 ##### General Workflow
 Now that you know what are the key components to an AngularJS app and how they're organized, you can start working on more details. With this shopping platform application, we need it to perform some basic functionalities: 
 
-    - Display products
-    - Display detail of selected product
-    - Display products in cart and the subtotal of purchase
-    - Add/remove products to/from shopping cart
-    - Search products
+- Display products
+- Display detail of selected product
+- Display products in cart and the subtotal of purchase
+- Add/remove products to/from shopping cart
+- Search products
 
 In order to present them, we'll create one view for displaying multiple products, one for displaying product detail, and another one for displaying selected products in shopping cart. 
 
@@ -68,14 +68,16 @@ Since we are able to retrieve all product information, it make sense to add anot
 
 So to sum up, here are what you need in general:
 	
-	- index page & index controller
-	  - ```search``` service
-	- product view & product controller
-	  - ```getAllProducts``` service
-	  - ```addToCart``` service
-	- product detail view & product detail controller
-      - ```getProductById``` service
-      - ```addToCart``` service
-	- Shopping cart view & shopping cart controller
-	  - ```removeOrder``` service
-	  - ```subtotal``` directive
+- index page & index controller
+  - ```search``` service
+- product view & product controller
+  - ```getAllProducts``` service
+  - ```addToCart``` service
+- product detail view & product detail controller
+  - ```getProductById``` service
+  - ```addToCart``` service
+- Shopping cart view & shopping cart controller
+  - ```removeOrder``` service
+  - ```subtotal``` directive
+
+Here you have it! You now have a structured project and a AngularJS application with basic functionalities! You probably will need some more supplemental services to complete the exercise but it'll be easier now. I know it not like a conventional tutorial that tells you everything step by step. It'll take you a little more time to figure out how to connect the dots but at the end you'll have your own application with your own creativity and problem solving process!
