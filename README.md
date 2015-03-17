@@ -8,7 +8,7 @@ This exercise is designed for people who have some basic idea about AngularJS an
 You will be building a online shopping platform which allows consumers to browse, search, and purchase products. To make it less overwhelming for beginners, the entire exercise is pure AngularJS.
 
 ## How to Approach It
-By the time you decide to work on the project, you should have basic knowledge of the basic building blocks of AngularJS such as Controllers and Services and Scope. I'll be giving you general guidance and hints to help you think through the development process.
+By the time you decide to work on the project, you should have basic knowledge of the basic building blocks of AngularJS such as Controllers and Services and Scope. You'll have your freedom to implement the application and I'll be giving you general guidance and hints to help you think through the development process. 
 
 It will be easier to follow the workflow if you focus on one view at a time. Each view might involve multiple smaller building blocks such as directives and services in different directories. Don't panic! Just follow the scipts and explore the logic. One of the beauties of MVW structure is that it breakdown your code into number of layers and keep each part of your code short and clear. So instead of having a huge chunck of javascript file, a healthy project tend to have small Javascript files grouped by their natures.
 
@@ -69,13 +69,13 @@ Since we are able to retrieve all product information, it make sense to add anot
 So to sum up, here are what you need in general:
 	
 	- index page & index controller
-		- ```search``` service
+	  - ```search``` service
 	- product view & product controller
-		- ```getAllProducts``` service
-		- ```addToCart``` service
+	  - ```getAllProducts``` service
+	  - ```addToCart``` service
 	- product detail view & product detail controller
-		- ```getProductById``` service
-		- ```addToCart``` service
+      - ```getProductById``` service
+      - ```addToCart``` service
 	- Shopping cart view & shopping cart controller
-		- ```removeOrder``` service
-		- ```subtotal``` directive
+	  - ```removeOrder``` service
+	  - ```subtotal``` directive
