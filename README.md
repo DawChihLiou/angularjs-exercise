@@ -2,20 +2,20 @@
 *A 40 hour practice of AngularJS*
 
 ## What Is it about
-This exercise is designed for people who are new to AngularJS and looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you will have a more comprehensive idea of how to build single page applications through AngularJS.
+This exercise is designed for people who have some basic idea about AngularJS and are looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you'll have a more comprehensive idea of how to build single page applications through AngularJS.
 
 ## What Exactly You will Be Working on
 You will be building a online shopping platform which allows consumers to browse, search, and purchase products. To make it less overwhelming for beginners, the entire exercise is pure AngularJS.
 
 ## How to Approach It
-By the time you decide to work on the project, you should have basic knowledge of the basic building blocks of AngularJS such as Controllers and Services and Scope. 
+By the time you decide to work on the project, you should have basic knowledge of the basic building blocks of AngularJS such as Controllers and Services and Scope. I'll be giving you general guidance and hints to help you think through the development process.
 
-It will be easier to follow the workflow if you focus on **one view at a time**. Each view might involve multiple smaller building blocks such as directives and services in different directories. Don't panic! Just follow the scipts and explore the logic. One of the beauties of MVW structure is that it breakdown your code into number of layers and keep each part of your code short and clear. So instead of having a huge chunck of javascript file, a healthy project tend to have small Javascript files grouped by their natures.
+It will be easier to follow the workflow if you focus on one view at a time. Each view might involve multiple smaller building blocks such as directives and services in different directories. Don't panic! Just follow the scipts and explore the logic. One of the beauties of MVW structure is that it breakdown your code into number of layers and keep each part of your code short and clear. So instead of having a huge chunck of javascript file, a healthy project tend to have small Javascript files grouped by their natures.
 
 The soul purpose for this exercise is to get you into AngularJS world so focus on the framework itself (you can totally ignore other parts of the project like Bootstrap, RequireJS, and Testing code if you want.) I include those parts only because they are great tools that facilitate my development process.
 
 ## So Let's Get to It
-Let's start from the top!
+Let's start from the top! First thing you need to know is how the project is organized.
 
 ##### Project Structure
 Sigle Page Application powered by AngularJS relies heavily on Javascript codes and HTML templates. Pretty much all the magic comes from them so first thing you need to do is to locate where they are.
@@ -39,10 +39,10 @@ You'll need controllers to pair with the views to make them functional. The purp
 You can write your logics in services. Services are great because they can be reused through out your application, and they give your code clear layers so that you can have small and concise ```controllers``` that is easy to read. Services are located under ```public/javascripts/services```. 
 
 ##### Directive 
-Directives give you great flexibilities to create your elements with specific functionalities that you want them to perform. 
+Directives give you great flexibilities to create your elements with specific functionalities that you want them to perform. You can find directives under ```public/javascripts/direcitves```.
 
-
-Now that you know what are the key components to an AngularJS app and where they are, you can start working on more details. With this shopping platform application, we need it to perform some basic functionalities: 
+##### General Workflow
+Now that you know what are the key components to an AngularJS app and how they're organized, you can start working on more details. With this shopping platform application, we need it to perform some basic functionalities: 
 
     - Display products
     - Display detail of selected product
@@ -54,4 +54,10 @@ In order to present them, we'll create one view for displaying multiple products
 
 For displaying multiple products, you'll need to display all of your products in database (I use dummy data just for demonstration). In order to do that, you can write a service that retrieve all the product in database and assign the return value of the service to a ```$scope``` property. You can also implement a "quick shop" function simply by assigning a function to a scope property. 
 
-For displaying selected product detail, you can include the product number on URL like ```#/product-detail/12345``` and use the product number ```12345``` from the URL to form your query to retrieve the product detail. To get the parameters on URL, ```$routeParams``` is an very useful object that contains all parameters on URL.
+For displaying selected product detail, you can include the product number on URL like ```#/product-detail/12345``` and use the product number ```12345``` from the URL to form your query to retrieve the selected product detail. To get the parameters on URL, ```$routeParams``` is an very useful object that contains all parameters on URL.
+
+Displaying items in shopping cart is a little more complicated. First you need to think about the life cycle of the items in cart. We want the selected items in the cart throughout our entire visits so they won't be removed until we close the application. How do we add and remove items from cart can be tricky too. Think about clicking "Buy" button to add an item from product detail view, the item information has to be saved somewhere so you can retrieve and display it when you open the shopping cart view.
+
+Since there's no database involved and we don't need to keep a record of users' behaviors, we can make it work by simply playing with ```$scope``` and ```controller``` hierarchy. A very important concept in AngularJS is that one instance of ```$scope``` is assigned to each controller so the scopes are isolated from other scopes in the application. However, all ```$scope``` are children of ```$rootScope```. It's handy to store "application level" data in root scope so the data can be accessed from any part of the application. 
+
+Another cool concept is that controllers can be nested. Parent controllers and chrild controllers can communicate though ```$emit``` and ```$broadcast``` service that listens to events from child to parent controllers and from parent to child controllers. Data saved in parent controller can be accessed from child controllers. 
