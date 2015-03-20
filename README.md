@@ -20,7 +20,7 @@ Let's start from the top! First thing you need to know is how the project is org
 ##### Project Structure
 Sigle Page Application powered by AngularJS relies heavily on Javascript codes and HTML templates. Pretty much all the magic comes from them so first thing you need to do is to locate where they are.
 
-All of our scripts and templates are located under ```javascripts``` and ```partials``` folder. Under ```javascripts``` folder, you can find all the AngularJS controllers, directives, and services there. Views are define as templtes which give us the freedom to do two way data binding.
+All of our scripts and templates are located under ```javascripts``` and ```partials``` folder. Under ```javascripts``` folder, you can find all the AngularJS controllers, directives, and services there. Views are defined as templtes which give us the freedom to do two way data binding.
 
 ##### Index page
 ```index.html``` under ```public``` folder  is where it starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. Besides including assets, you can have your common html components through out the app and also locates where views should be when URL changes. 

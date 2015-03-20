@@ -1,27 +1,31 @@
 // Karma configuration
-// Generated on Thu Feb 12 2015 11:25:23 GMT-0500 (EST)
+// Generated on Thu Mar 19 2015 12:36:39 GMT+0800 (CST)
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './public/javascripts',
+    basePath: '',
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'lib/angular.js',
-      'lib/angular-mocks.js'
+      'test-main.js',
+      {pattern: 'public/javascripts/**/*.js', included: false},
+      {pattern: 'public/javascripts/*.js', included: false},
+      {pattern: 'test/*.js', included: false}
     ],
 
 
     // list of files to exclude
     exclude: [
+      'public/javascripts/main.js',
+      'public/javascripts/lib/bootstrap.js'
     ],
 
 
@@ -56,7 +60,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode

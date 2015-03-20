@@ -15,9 +15,7 @@ define(['./module'], function (controllers) {
 
 			console.log('products controller initialized.');
 
-			var quickShopQty = 1
-
-			if ($location.path() === '/products') {
+			if ($location.path() === '/') {
 				$scope.showSearchReault = false;
 				$scope.products = productFactory.getAllProducts;
 			} else {
@@ -33,6 +31,7 @@ define(['./module'], function (controllers) {
 				if (productServices.isDuplicateOrder(product, $rootScope.orders)) {
 					alert('You already have ' + product.name + ' in your cart.');
 				} else {
+					var quickShopQty = 1
 					productServices.addToCart(product, quickShopQty)
 						.then(function (data) {
 							// pass date by emitting event to parent controller 

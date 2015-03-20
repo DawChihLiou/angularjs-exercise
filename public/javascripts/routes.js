@@ -2,7 +2,7 @@ define(['./app'], function (app) {
     'use strict';
 
     app.config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/products', {
+        $routeProvider.when('/', {
         	templateUrl: 'partials/products.html',
         	controller: 'productsController'
         });
@@ -23,7 +23,7 @@ define(['./app'], function (app) {
         });
 
         $routeProvider.otherwise({
-        	redirectTo: '/products'
+        	redirectTo: '/'
         });
     }]);
 
