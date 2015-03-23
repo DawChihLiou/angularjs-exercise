@@ -5,6 +5,7 @@ define(['./module'], function (services) {
 	'use strict';
 	
 	services.factory('productServices', ['$q', function ($q) {
+		
 		var services = {};
 		
 		/*
