@@ -5,19 +5,21 @@ define(['angular', 'angularMocks'], function (ng) {
 
 		var ctrlr, 
 			prodService,
+			prodFactory,
 			rootScope, 
 			scope, 
 			location;
 
 		beforeEach(ng.mock.module('app'));
 
-		beforeEach(ng.mock.inject(function ($rootScope, $controller, $location, productServices) {
+		beforeEach(ng.mock.inject(function ($rootScope, $controller, $location, productServices, productFactory) {
 			
 			rootScope = $rootScope;
 			scope = $rootScope.$new();
 			location = $location;
 			prodService = productServices;
-			
+			prodFactory = productFactory;
+
 			location.path('/');
 
 			ctrlr = $controller('productsController', {
@@ -28,6 +30,8 @@ define(['angular', 'angularMocks'], function (ng) {
 			spyOn(scope, '$emit');
 			spyOn(prodService, 'isDuplicateOrder').and.callThrough();
 			spyOn(prodService, 'addToCart').and.callThrough();
+			spyOn(prodFactory, 'getProductsByKeyword').and.callThrough();
+			spyOn(prodFactory, 'getAllProducts').and.callThrough();
 
 		}));
 
@@ -83,5 +87,24 @@ define(['angular', 'angularMocks'], function (ng) {
 			expect(scope.$emit).not.toHaveBeenCalled();
 
 		});
+
+		it('should search for all 3 products in \'sport\' category and 2 products with number \'5\'', ng.mock.inject(function ($controller) {
+			
+			location.path('/search');
+			
+			var searchKeyword = 'spor 5',
+				anotherScope = rootScope.$new(),
+				ctrl = $controller('productsController', {
+					$scope: anotherScope,
+					$routeParams: {
+						query: searchKeyword
+					}
+				});
+
+			expect(prodFactory.getProductsByKeyword).toHaveBeenCalled();
+			expect(anotherScope.products).toBeDefined();
+			expect(anotherScope.products.length).toEqual(5);
+
+		}));
 	});
 });

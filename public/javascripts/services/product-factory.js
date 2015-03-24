@@ -109,18 +109,24 @@ define(['./module'], function (services) {
 		factory.getProductsByKeyword = function (keyword) {
 			
 			var result = [],
-		 		objStr,
-		 		regexStr = '([' + keyword.replace(/\s/g, '') + '])',
-		 		regex = new RegExp(regexStr, 'g');
+		 		prod,
+		 		regexStr = '(' + keyword.replace(/\s/g, '|') + ')',
+		 		regex = new RegExp(regexStr, 'ig');
 
 		 	var i = 0,
 		 		len = products.length;
 
 		 	for (i; i < len; i += 1) {
-		 		objStr = JSON.stringify(products[i]);
+		 		prod = products[i];
 		 		
-		 		if (regex.test(objStr)) {
-		 			result.push(products[i]);
+		 		for (var key in prod) {
+
+		 			if (regex.test(prod[key])) {
+
+		 				result.push(prod);
+
+		 				break;
+		 			}
 		 		}
 		 	}
 
