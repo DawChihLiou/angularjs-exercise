@@ -1,7 +1,7 @@
 define(['angular', 'angularMocks'], function (ng) {
 	'use strict';
 
-	describe('productsController', function () {
+	describe('products controller', function () {
 
 		var ctrlr, 
 			prodService,
@@ -24,6 +24,11 @@ define(['angular', 'angularMocks'], function (ng) {
 				'$scope': scope
 			});
 
+			spyOn(scope, 'addToCart').and.callThrough();
+			spyOn(scope, '$emit');
+			spyOn(prodService, 'isDuplicateOrder').and.callThrough();
+			spyOn(prodService, 'addToCart').and.callThrough();
+
 		}));
 
 		it('should show it is initialized with default path \'/\'', function () {
@@ -44,9 +49,8 @@ define(['angular', 'angularMocks'], function (ng) {
 
 		});
 
-		it('should call isDuplicateOrder and addToCart when new order does not match hitory', function () {
-			
-			var testProduct = {
+		// test data
+		var testProduct = {
 				id: 123, 
 				name: 'test123',
 				price: 23.99,
@@ -54,39 +58,24 @@ define(['angular', 'angularMocks'], function (ng) {
 				description: 'description description description.'
 			};
 
-			spyOn(scope, 'addToCart').and.callThrough();
-			spyOn(scope, '$emit');
-			spyOn(prodService, 'isDuplicateOrder').and.callThrough();
-			spyOn(prodService, 'addToCart').and.callThrough();
-
+		it('should call isDuplicateOrder and addToCart when new order does not match hitory', function () {
+			
 			rootScope.orders = [];
 			scope.addToCart(testProduct);
-			rootScope.$digest();
+			scope.$digest();
 
 			expect(scope.addToCart).toHaveBeenCalled();
 			expect(prodService.isDuplicateOrder).toHaveBeenCalled();
 			expect(prodService.addToCart).toHaveBeenCalled();
 			expect(scope.$emit).toHaveBeenCalled();
+
 		});
 
 		it('should call isDuplicateOrder but not addToCart when new order matches hitory', function () {
-			
-			var testProduct = {
-				id: 123, 
-				name: 'test123',
-				price: 23.99,
-				category: 'animal',
-				description: 'description description description.'
-			};
-
-			spyOn(scope, 'addToCart').and.callThrough();
-			spyOn(scope, '$emit');
-			spyOn(prodService, 'isDuplicateOrder').and.callThrough();
-			spyOn(prodService, 'addToCart').and.callThrough();
 
 			rootScope.orders = [testProduct];
 			scope.addToCart(testProduct);
-			rootScope.$digest();
+			scope.$digest();
 
 			expect(scope.addToCart).toHaveBeenCalled();
 			expect(prodService.isDuplicateOrder).toHaveBeenCalled();
