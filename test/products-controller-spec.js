@@ -31,7 +31,6 @@ define(['angular', 'angularMocks'], function (ng) {
 			spyOn(prodService, 'isDuplicateOrder').and.callThrough();
 			spyOn(prodService, 'addToCart').and.callThrough();
 			spyOn(prodFactory, 'getProductsByKeyword').and.callThrough();
-			spyOn(prodFactory, 'getAllProducts').and.callThrough();
 
 		}));
 
