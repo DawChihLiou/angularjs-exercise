@@ -42,7 +42,6 @@ define(['./module'], function (controllers) {
 			 * search for particular products with keywords
 			 */
 			$scope.searchProducts = function (keyword) {
-				var result = productFactory.getProductsByKeyword(keyword);
 
 				// route to 'cart' view
 				$location.path('/search/' + keyword);
