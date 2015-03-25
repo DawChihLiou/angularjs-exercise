@@ -2,7 +2,7 @@
 *A 40 hour practice of AngularJS*
 
 ## What Is it about
-This exercise is designed for people who have some basic idea about AngularJS and are looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you'll have a more comprehensive idea of how to build single page applications through AngularJS.
+This exercise is designed for people who have some basic ideas about AngularJS and are looking for a small project to work on. Through the exercise, you will explore the AngularJS MVW structure and how different parts communicate with each other. At the end of the exercise, you'll have a more comprehensive idea of how to build single page applications through AngularJS.
 
 ## What Exactly You will Be Working on
 You will be building a online shopping platform which allows consumers to browse, search, and purchase products. To make it less overwhelming for beginners, the entire exercise is pure AngularJS.
@@ -26,7 +26,7 @@ All of our scripts and templates are located under ```javascripts``` and ```part
 ```index.html``` under ```public``` folder  is where it starts. It includes all the scripts and stylesheets you need, so without RequireJS, you'll include all your modules and scripts there. Besides including assets, you can have your common html components through out the app and also locates where views should be when URL changes. 
 
 ##### Routing
-Route configuration can be defined in ```app.config()``` function, which allows us to put one-time configuration settings in. In order to set up routing, you need ```$routeProvider``` to do the work. It takes two parameters that the first specifies URL and the second takes an object with template/controller pair.
+Route configuration can be defined in ```app.config()``` function, which allows us to put one-time configuration settings. In order to set up routing, you need ```$routeProvider``` to do the work. It takes two parameters that the first specifies route and the second takes an object with template/controller pair.
 
 ##### View & Controller
 For each ```view```, you will need ```controllers``` to perform your functionalities. You can define view/controller pair in configuration with ```$routeProvider```, which loads the specified views and controllers for different URLs. You can find view templates under ```public/partials``` and controllers under ```public/javascripts/controllers```. 
@@ -60,7 +60,7 @@ Displaying items in shopping cart is a little more complicated. First you need t
 
 Since there's no database involved and we don't need to keep a record of users' behaviors, we can make it work by simply playing with ```$scope``` and ```controller``` hierarchy. A very important concept in AngularJS is that one instance of ```$scope``` is assigned to each controller so the scopes are isolated from other scopes in the application. However, all ```$scope``` are children of ```$rootScope```. It's handy to store "application level" data in root scope so the data can be accessed from any part of the application. 
 
-Another cool concept is that controllers can be nested. Parent controllers and chrild controllers can communicate though ```$emit``` and ```$broadcast``` service that listens to events from child to parent controllers and from parent to child controllers. Data saved in parent controller can be accessed from child controllers. So it offers you another way of updating items in shopping cart.
+Another cool concept is that controllers can be nested. Parent controllers and chrild controllers can communicate though ```$emit``` and ```$broadcast``` service that listens to events for scopes from child to parent controllers and from parent to child controllers. Data saved in parent controller can be accessed from child controllers. So it offers you another way of updating items in shopping cart.
 
 It would very useful to have the subtotal of your items when reviewing shopping cart. You can write a custom directive to calculate the total prices. 
 
@@ -80,4 +80,4 @@ So to sum up, here are what you need in general:
   - ```removeOrder``` service
   - ```subtotal``` directive
 
-Here you have it! You now have a structured project and a AngularJS application with basic functionalities! You probably will need some more supplemental services to complete the exercise but it'll be easier now. I know it not like a conventional tutorial that tells you everything step by step. It'll take you a little more time to figure out how to connect the dots but at the end you'll have your own application with your own creativity and problem solving process!
+Here you have it! You now have a structured project and a AngularJS application with basic functionalities! You probably will need some more supplemental services to complete the exercise but it'll be easier now. I know it's not like a conventional tutorial that tells you everything step by step. It'll take you a little more time to figure out how to connect the dots but at the end you'll have your own application with your own creativity and problem solving process!
