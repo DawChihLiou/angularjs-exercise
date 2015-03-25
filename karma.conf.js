@@ -18,7 +18,7 @@ module.exports = function(config) {
       'test-main.js',
       {pattern: 'public/javascripts/**/*.js', included: false},
       {pattern: 'public/javascripts/*.js', included: false},
-      {pattern: 'test/*.js', included: false}
+      {pattern: 'test/**/*.js', included: false}
     ],
 
 
@@ -32,6 +32,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        // 'public/partials/*.html': 'html2js'
     },
 
 
