@@ -20,12 +20,8 @@ define(['./module'], function (controllers) {
 			// listen to event from child productController
 			$scope.$on('addOrderEvent', function (event, data) {
 
-				console.log('listen to addOrder Event.')
-				
 				$rootScope.orders.push(data);
 
-				console.log($rootScope.orders);	
-				
 			});
 
 			/*

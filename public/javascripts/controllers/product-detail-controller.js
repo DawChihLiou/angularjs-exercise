@@ -35,6 +35,7 @@ define(['./module'], function (controllers) {
 							// emit event to parent $scope
 							$scope.$emit('addOrderEvent', data);
 						}, function (err) {
+							alrt('Failed to add order to cart.');
 							console.log('add order to cart failed -> ' + err);
 					});
 				}

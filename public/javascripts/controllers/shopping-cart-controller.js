@@ -31,7 +31,6 @@ define(['./module'], function (controllers) {
 					}, function (err) {
 
 						console.log(err);
-
 						alert('Sorry, item cannot be removed at this time.');
 				});
 			};
